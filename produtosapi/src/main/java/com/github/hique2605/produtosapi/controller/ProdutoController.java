@@ -2,11 +2,9 @@ package com.github.hique2605.produtosapi.controller;
 
 import com.github.hique2605.produtosapi.model.Produto;
 import com.github.hique2605.produtosapi.repository.ProdutoRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController     //anotacao diz que essa classe vai receber requisicoes rest.
@@ -29,5 +27,19 @@ public class ProdutoController {
         produtoRepository.save(produto);
         return produto;
     }
+
+    @GetMapping("/{id}") // outros paranmetros por exp ("/{id}/{nome}/{outrovalor}")
+    public Produto BuscaId(@PathVariable("id") String id){
+        //1 forma
+        //Optional<Produto> produto = produtoRepository.findById(id);
+        //return produto.isPresent() ? produto.get() : null;
+        return produtoRepository.findById(id).orElse(null); //mais simples
+    }
+
+
+
+
+
+
 
 }
