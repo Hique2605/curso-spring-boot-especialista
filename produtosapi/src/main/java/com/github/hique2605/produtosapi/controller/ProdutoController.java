@@ -4,6 +4,7 @@ import com.github.hique2605.produtosapi.model.Produto;
 import com.github.hique2605.produtosapi.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -47,6 +48,10 @@ public class ProdutoController {
         produtoRepository.save(produto);
     }
 
+    @GetMapping
+    public List<Produto> BuscaPorNome(@RequestParam("nome") String nome){
+      return produtoRepository.findByNome(nome);
 
+    }
 
 }
