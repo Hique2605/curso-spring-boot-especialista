@@ -30,13 +30,16 @@ public class ProdutoController {
 
     @GetMapping("/{id}") // outros paranmetros por exp ("/{id}/{nome}/{outrovalor}")
     public Produto BuscaId(@PathVariable("id") String id){
-        //1 forma
+        //1 forma:
         //Optional<Produto> produto = produtoRepository.findById(id);
         //return produto.isPresent() ? produto.get() : null;
         return produtoRepository.findById(id).orElse(null); //mais simples
     }
 
-
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable  String id){
+        produtoRepository.deleteById(id);
+    }
 
 
 
