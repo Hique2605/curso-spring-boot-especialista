@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController     //anotacao diz que essa classe vai receber requisicoes rest
+@RestController     //anotacao diz que essa classe vai receber requisicoes rest.
 @RequestMapping("produtos")  //qual é a url base
 public class ProdutoController {
 

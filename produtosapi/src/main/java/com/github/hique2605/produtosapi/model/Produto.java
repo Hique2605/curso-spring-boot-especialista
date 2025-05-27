@@ -1,6 +1,6 @@
 package com.github.hique2605.produtosapi.model;
 
-public class Produto {
+public class Produto { //classe produto
 
     private String id;
     private String nome;
