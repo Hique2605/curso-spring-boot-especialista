@@ -2,6 +2,7 @@ package com.github.hique2605.arquiteturaspring.montadora.api;
 
 import com.github.hique2605.arquiteturaspring.montadora.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/carros")
 public class TesteFabricaController {
 
-    @Autowired // Injeta o bean Motor que foi definido na classe MontadoraConfiguration
-    // O Spring procura o bean Motor no contexto da aplicação e injeta aqui
+    @Autowired // Injeta o bean Motor que foi definido na classe MontadoraConfiguration. O Spring procura o bean Motor no contexto da aplicação e injeta aqui
+    @Qualifier("motorEletrico")
     private Motor motor;
 
 
