@@ -53,5 +53,5 @@ public class ProdutoController {
       return produtoRepository.findByNome(nome);
 
     }
-
+    //fazer o get all
 }
